@@ -1,0 +1,26 @@
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\Pong project homescreen.exe
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\Pong project homescreen.deps.json
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\Pong project homescreen.runtimeconfig.json
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\Pong project homescreen.runtimeconfig.dev.json
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\Pong project homescreen.dll
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\ref\Pong project homescreen.dll
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\bin\Debug\net5.0-windows\Pong project homescreen.pdb
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.csproj.AssemblyReference.cache
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen_MarkupCompile.cache
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen_MarkupCompile.lref
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.g.resources
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.AssemblyInfoInputs.cache
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.AssemblyInfo.cs
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.csproj.CoreCompileInputs.cache
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.dll
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\ref\Pong project homescreen.dll
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.pdb
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\Pong project homescreen.genruntimeconfig.cache
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\ClassicPong.g.cs
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\ClassicPong.baml
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\NijntjePong.g.cs
+C:\Users\Startklaar\Desktop\Visual studio dingen\Pong project homescreen\Pong project homescreen\obj\Debug\net5.0-windows\NijntjePong.baml
