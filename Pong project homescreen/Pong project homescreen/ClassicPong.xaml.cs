@@ -19,8 +19,9 @@ namespace Pong_project_homescreen
     /// </summary>
     public partial class ClassicPong : Window
     {
-        public ClassicPong(string p1Naam)
+        public ClassicPong(string p1Naam, string p2naam)
         {
+            
             InitializeComponent();
         }
     }

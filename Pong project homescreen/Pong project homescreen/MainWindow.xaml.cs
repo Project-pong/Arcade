@@ -30,7 +30,7 @@ namespace Pong_project_homescreen
             string P2Naam = Player2_naam.Text;
             
             //Spel starten
-            ClassicPong game = new ClassicPong(P1Naam);
+            ClassicPong game = new ClassicPong(P1Naam, P2Naam);
             game.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
         }
@@ -41,7 +41,7 @@ namespace Pong_project_homescreen
             string P2Naam = Player2_naam.Text;
 
             //Spel starten
-            NijntjePong game2 = new NijntjePong();
+            NijntjePong game2 = new NijntjePong(P1Naam, P2Naam);
             game2.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
         }

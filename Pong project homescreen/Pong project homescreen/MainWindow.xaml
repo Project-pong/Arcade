@@ -39,11 +39,13 @@
             <TextBox x:Name="Player1_naam"
                      FontSize="15"
                      Height="25"
-                     VerticalAlignment="Top">
+                     VerticalAlignment="Top"
+                     Width="150">
                 Naam player 1</TextBox>
             <TextBox x:Name="Player2_naam"
                      FontSize="15"
-                     Height="25">
+                     Height="25"
+                     Width="150">
                 Naam player 2</TextBox>
                      
         </Grid>

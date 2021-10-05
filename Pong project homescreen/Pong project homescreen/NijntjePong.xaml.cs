@@ -19,7 +19,7 @@ namespace Pong_project_homescreen
     /// </summary>
     public partial class NijntjePong : Window
     {
-        public NijntjePong()
+        public NijntjePong(string P1Naam, string P2Naam)
         {
             InitializeComponent();
         }
