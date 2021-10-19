@@ -46,6 +46,13 @@
                    Canvas.Top="184"
                    >
             </Rectangle>
+            <Rectangle x:Name="Plyayer2"
+                   Fill="Red"
+                   Height="65"
+                   Width="12" Canvas.Left="765" Canvas.Top="67" 
+                  
+                   >
+            </Rectangle>
         </Canvas>
     </Border>
 </Window>

@@ -15,7 +15,7 @@ using System.Windows.Threading;
 
 namespace Pong_project_homescreen
 {
-  
+
     public partial class NijntjePong : Window
     {
         private ImageBrush PongBal2 = new ImageBrush();
@@ -23,7 +23,15 @@ namespace Pong_project_homescreen
         private bool moveUpPlayer1 = false, moveDownPlayer1 = false;
         const int SPEED = 7;
         private DispatcherTimer gameTimer = new DispatcherTimer();
-        
+
+        private double nijntjeX = 0.0;
+        private double nijntjeY = 0.0;
+        private double nijntjeDirX = 2.25;
+        private double nijntjeDirY = 3.0;
+
+        //houdt bij welkle speler als laatste heeft gekaatst
+        int lastPlayerHit = 0;
+
         public NijntjePong(string P1Naam, string P2Naam)
         {
             InitializeComponent();
@@ -37,14 +45,9 @@ namespace Pong_project_homescreen
 
             PongBal2.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/NijntjebalGoed.png"));
             NijntjeRect.Fill = PongBal2;
-            
-        }
-       
-        private double nijntjeY = 0.0;
-        private double nijntjeDirY = 3.0;
 
-        private double nijntjeX = 0.0;
-        private double nijntjeDirX = 0.25;
+        }
+
         private void MoveNijntje(object sender, EventArgs e)
         {
             nijntjeY += nijntjeDirY;
@@ -55,11 +58,29 @@ namespace Pong_project_homescreen
             NijntjeRect.RenderTransform = group;
             if (nijntjeY >= 178.0)
             {
-                nijntjeDirY = nijntjeDirY * - 1.0;
+                nijntjeDirY = nijntjeDirY * -1.0;
             }
             if (nijntjeY <= -196.0)
             {
                 nijntjeDirY = nijntjeDirY * -1.0;
+            }
+
+            //bereken de posities van nijntje en de twee spelers
+            Rect positionNijntje = new Rect(Canvas.GetLeft(NijntjeRect) + nijntjeX, Canvas.GetTop(NijntjeRect) + nijntjeY, 40, 40);
+            Rect player1position = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height);
+            Rect player2position = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
+
+            //kaats nijntje als speler 1 wordt geraakt
+            if (positionNijntje.IntersectsWith(player1position) && lastPlayerHit != 1)
+            {
+                lastPlayerHit = 1;
+                nijntjeDirX *= -1;
+            }
+            //kaats nijntje als speler 2 wordt geraakt
+            if (positionNijntje.IntersectsWith(player2position) && lastPlayerHit != 2)
+            {
+                lastPlayerHit = 2;
+                nijntjeDirX *= -1;
             }
         }
 
@@ -93,13 +114,13 @@ namespace Pong_project_homescreen
 
             if (moveDownPlayer1)
             {
-                
+
                 if (Canvas.GetTop(Player1) < 346)
                 {
                     Canvas.SetTop(Player1, Canvas.GetTop(Player1) + SPEED);
                 }
             }
-           
+
         }
         private void KeyDown(object sender, KeyEventArgs e)
         {
@@ -140,6 +161,6 @@ namespace Pong_project_homescreen
                 moveDownPlayer1 = false;
             }
 
-        }      
+        }
     }
 }
