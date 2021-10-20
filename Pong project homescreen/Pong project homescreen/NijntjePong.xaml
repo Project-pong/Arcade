@@ -6,5 +6,63 @@
         xmlns:local="clr-namespace:Pong_project_homescreen"
         mc:Ignorable="d"
         Title="NijntjePong" Height="450" Width="800">
-   Hier komt Nijntje Pong
+    <Border x:Name="Border_NijntjePong">
+        <Canvas x:Name="NijntjeCanvas"
+            Focusable="True"
+            KeyDown="KeyDown"
+            KeyUp="KeyUp"
+            MaxHeight="450">
+
+            <Image x:Name="NijntjeBackground"
+               Width="800" 
+               Height="450"
+               Source="Images\Nijntjebackground.png">
+            </Image>
+
+            <Rectangle
+            x:Name="NijntjeRect"
+            Fill="Brown"
+            Width="40"
+            Height="40" 
+            Canvas.Left="380" 
+            Canvas.Top="197" 
+            RenderTransformOrigin="0.418,-0.034">
+            </Rectangle>
+
+            <Rectangle x:Name="Player1"
+                   Fill="Yellow"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="10" 
+                   Canvas.Top="184"
+                   >
+            </Rectangle>
+
+            <Rectangle x:Name="Player2"
+                   Fill="Red"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="765" 
+                   Canvas.Top="184"
+                   >
+            </Rectangle>
+
+            <Label x:Name="scoreP1" 
+                   Canvas.Left="205" 
+                   Canvas.Top="55"
+                   FontSize="30"
+                   Content="0"
+                   Foreground="White">
+            </Label>
+
+            <Label x:Name="scoreP2" 
+                   Canvas.Left="607" 
+                   Canvas.Top="55"
+                   FontSize="30"
+                   Content="0" 
+                   Foreground="White"
+                   >
+            </Label>
+        </Canvas>
+    </Border>
 </Window>
