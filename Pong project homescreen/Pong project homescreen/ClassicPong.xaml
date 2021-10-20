@@ -7,5 +7,22 @@
         mc:Ignorable="d"
         Title="ClassicPong" Height="450" Width="800">
 
-   Hier komt classic Pong
+    <Canvas>
+        <Rectangle x:Name="Player11"
+                   Height="65"
+                   Width="12" Canvas.Left="10" 
+                   Canvas.Top="185"
+                   Fill="Black">
+        </Rectangle>
+
+        <Rectangle x:Name="Player22"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="778" 
+                   Canvas.Top="185"
+                   Fill="Black">
+        </Rectangle>
+
+
+    </Canvas>
 </Window>
