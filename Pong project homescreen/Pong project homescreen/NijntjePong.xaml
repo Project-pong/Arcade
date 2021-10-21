@@ -6,5 +6,109 @@
         xmlns:local="clr-namespace:Pong_project_homescreen"
         mc:Ignorable="d"
         Title="NijntjePong" Height="450" Width="800">
-   Hier komt Nijntje Pong
+    <Border x:Name="Border_NijntjePong">
+        <Canvas x:Name="NijntjeCanvas"
+            Focusable="True"
+            KeyDown="KeyDown2"
+            KeyUp="KeyUp2"
+            MaxHeight="450">
+
+            <Image x:Name="NijntjeBackground"
+               Width="800" 
+               Height="450"
+               Source="Images\Nijntjebackground.png">
+            </Image>
+
+            <Rectangle
+            x:Name="NijntjeRect"
+            Fill="Brown"
+            Width="40"
+            Height="40" 
+            Canvas.Left="380" 
+            Canvas.Top="197" 
+            RenderTransformOrigin="0.418,-0.034">
+            </Rectangle>
+
+            <Rectangle x:Name="Player1"
+                   Fill="Yellow"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="10" 
+                   Canvas.Top="184"
+                   >
+            </Rectangle>
+
+            <Rectangle x:Name="Player2"
+                   Fill="Red"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="765" 
+                   Canvas.Top="184"
+                   >
+            </Rectangle>
+
+            <Label x:Name="scoreP1" 
+                   Canvas.Left="205" 
+                   Canvas.Top="55"
+                   FontSize="30"
+                   Content="0"
+                   Foreground="White">
+            </Label>
+
+            <Label x:Name="scoreP2" 
+                   Canvas.Left="574" 
+                   Canvas.Top="55"
+                   FontSize="30"
+                   Content="0" 
+                   Foreground="White"
+                   >
+            </Label>
+            <Label Canvas.Left="385" 
+                   Canvas.Top="42" 
+                   Height="52" 
+                   Width="53" 
+                   x:Name="TimerSec" 
+                   Foreground="Red" 
+                   Content="00" 
+                   FontSize="24">
+
+            </Label>
+
+            <Label Canvas.Left="438" 
+                   Canvas.Top="50" 
+                   Height="52" 
+                   Width="53" 
+                   x:Name="TimerCs" 
+                   Foreground="Red" 
+                   Content="00" 
+                   FontSize="16">
+
+            </Label>
+
+            <Label Canvas.Left="332" 
+                   Canvas.Top="42" 
+                   Height="52" 
+                   Width="53" 
+                   x:Name="TimerMin" 
+                   Foreground="Red" 
+                   Content="00" 
+                   FontSize="24">
+
+            </Label>
+
+            <Label
+                Content=":"
+                FontSize="24"
+                Foreground="Red" 
+                Canvas.Left="370" 
+                Canvas.Top="41">
+            </Label>
+
+            <Label Content="."
+                   FontSize="24" 
+                   Canvas.Left="423" 
+                   Canvas.Top="41"
+                   Foreground="Red"></Label>
+        </Canvas>
+    </Border>
 </Window>

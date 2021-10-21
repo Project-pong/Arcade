@@ -7,5 +7,78 @@
         mc:Ignorable="d"
         Title="ClassicPong" Height="450" Width="800">
 
-   Hier komt classic Pong
+    <Canvas x:Name="PongCanvas"
+            Focusable="True"
+            KeyDown="PongCanvas_KeyDown"
+            KeyUp="PongCanvas_KeyUp"
+            MaxHeight="450">
+        
+        <Rectangle x:Name="Player11"
+                   Height="65"
+                   Width="12" Canvas.Left="10" 
+                   Canvas.Top="185"
+                   Fill="Black">
+        </Rectangle>
+
+        <Rectangle x:Name="Player22"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="765" 
+                   Canvas.Top="185"
+                   Fill="Black">
+        </Rectangle>
+
+        <Rectangle x:Name="Bal2"
+                   Height="25"
+                   Width="24" 
+                   Canvas.Left="388" 
+                   Canvas.Top="205"
+                   Fill="Black">
+        </Rectangle>
+
+        <Label x:Name="ScoreP11"
+               FontSize="30"
+               Foreground="Black"
+               Content="0" 
+               Canvas.Left="197" 
+               Canvas.Top="67"></Label>
+
+        <Label x:Name="ScoreP22"
+               FontSize="30"
+               Foreground="Black"
+               Content="0" 
+               Canvas.Left="583" 
+               Canvas.Top="67"></Label>
+
+        <Label x:Name="TimerMin2"
+               Content="00"
+               FontSize="24"
+               Foreground="Black" 
+               Canvas.Left="325" 
+               Canvas.Top="36"></Label>
+
+        <Label x:Name="TimerSec2"
+               Content="00"
+               Foreground="Black"
+               FontSize="24" 
+               Canvas.Left="376" 
+               Canvas.Top="36"></Label>
+
+        <Label x:Name="TimerCs2"
+               Content="00"
+               Foreground="Black"
+               FontSize="16" 
+               Canvas.Left="427" 
+               Canvas.Top="43"></Label>
+
+        <Label FontSize="24"
+               Content=":" 
+               Canvas.Left="361" 
+               Canvas.Top="32"></Label>
+
+        <Label Content="."
+               FontSize="24" 
+               Canvas.Left="412" 
+               Canvas.Top="36"></Label>
+    </Canvas>
 </Window>
