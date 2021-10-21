@@ -168,7 +168,7 @@ namespace Pong_project_homescreen
                 nijntjeDirX = nijntjeDirX * -1 - countPlayerHit;
             }
             //doelpunt voor player 1
-            if (nijntjeX >= 360)
+            if (nijntjeX >= 400)
             {
                 nijntjeDirY = nijntjeDirY * -0;
                 nijntjeDirX = nijntjeDirX * -0;
@@ -176,13 +176,14 @@ namespace Pong_project_homescreen
                 nijntjeY = 0;
                 nijntjeDirX = 2.25;
                 nijntjeDirY = 3.0;
+                countPlayerHit = 0.5;
             }
-            if (nijntjeX >= 357)
+            if (nijntjeX >= 397)
             {
                 ScoreP11.Content = puntenP1++;
             }
             //doelpunt voor player 2
-            if (nijntjeX <= -380)
+            if (nijntjeX <= -400)
             {
                 nijntjeDirY = nijntjeDirY * -0;
                 nijntjeDirX = nijntjeDirX * -0;
@@ -190,8 +191,9 @@ namespace Pong_project_homescreen
                 nijntjeY = 0;
                 nijntjeDirX = -2.25;
                 nijntjeDirY = 3.0;
+                countPlayerHit = 0.5;
             }
-            if (nijntjeX <= -377)
+            if (nijntjeX <= -397)
             {
                 ScoreP22.Content = puntenP2++;
             }
