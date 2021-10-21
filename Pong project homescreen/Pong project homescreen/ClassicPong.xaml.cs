@@ -26,7 +26,7 @@ namespace Pong_project_homescreen
         private bool moveDownPlayer11 = false;
         private bool moveUpPlayer22 = false;
         private bool moveDownPlayer22 = false;
-        double countPlayerHit = 0.5;
+        double countPlayerHit = 0.15;
         const int SPEED2 = 5;
         private DispatcherTimer gameTimer = new DispatcherTimer();
 
@@ -176,7 +176,7 @@ namespace Pong_project_homescreen
                 nijntjeY = 0;
                 nijntjeDirX = 2.25;
                 nijntjeDirY = 3.0;
-                countPlayerHit = 0.5;
+                countPlayerHit = 0.15;
             }
             if (nijntjeX >= 397)
             {
@@ -191,7 +191,7 @@ namespace Pong_project_homescreen
                 nijntjeY = 0;
                 nijntjeDirX = -2.25;
                 nijntjeDirY = 3.0;
-                countPlayerHit = 0.5;
+                countPlayerHit = 0.15;
             }
             if (nijntjeX <= -397)
             {
