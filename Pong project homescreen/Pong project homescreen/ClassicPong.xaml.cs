@@ -243,6 +243,7 @@ namespace Pong_project_homescreen
             TimerSec2.Content = timeSec;
             TimerCs2.Content = timeCs;
 
+            
         }
     }
    
