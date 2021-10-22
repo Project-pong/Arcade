@@ -7,5 +7,120 @@
         mc:Ignorable="d"
         Title="ClassicPong" Height="450" Width="800">
 
-   Hier komt classic Pong
+    <Canvas x:Name="PongCanvas"
+            Focusable="True"
+            KeyDown="PongCanvas_KeyDown"
+            KeyUp="PongCanvas_KeyUp"
+            MaxHeight="450">
+
+        <Image x:Name="ZwarteAchtergrond"
+               Width="806"
+               Height="800"
+               Source="Images\zwart-vlak.jpg" 
+               Canvas.Left="-1" 
+               Canvas.Top="-194">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.203"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.417"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Rectangle x:Name="Player11"
+                   Height="65"
+                   Width="12" Canvas.Left="10" 
+                   Canvas.Top="185"
+                   Fill="White">
+        </Rectangle>
+
+        <Rectangle x:Name="Player22"
+                   Height="65"
+                   Width="12" 
+                   Canvas.Left="765" 
+                   Canvas.Top="185"
+                   Fill="White">
+        </Rectangle>
+
+        <Rectangle x:Name="Bal2"
+                   Height="25"
+                   Width="24" 
+                   Canvas.Left="388" 
+                   Canvas.Top="205"
+                   Fill="White">
+        </Rectangle>
+
+        <Label x:Name="ScoreP11"
+               FontSize="30"
+               Foreground="White"
+               Content="0" 
+               Canvas.Left="197" 
+               Canvas.Top="67"></Label>
+
+        <Label x:Name="ScoreP22"
+               FontSize="30"
+               Foreground="White"
+               Content="0" 
+               Canvas.Left="583" 
+               Canvas.Top="67"></Label>
+
+        <Label x:Name="TimerMin2"
+               Content="00"
+               FontSize="24"
+               Foreground="White" 
+               Canvas.Left="325" 
+               Canvas.Top="36"></Label>
+
+        <Label x:Name="TimerSec2"
+               Content="00"
+               Foreground="White"
+               FontSize="24" 
+               Canvas.Left="376" 
+               Canvas.Top="36"></Label>
+
+        <Label x:Name="TimerCs2"
+               Content="00"
+               Foreground="White"
+               FontSize="16" 
+               Canvas.Left="427" 
+               Canvas.Top="43"></Label>
+
+        <Label FontSize="24"
+               Content=":" 
+               Canvas.Left="361" 
+               Canvas.Top="32"
+               Foreground="White"></Label>
+
+        <Label Content="."
+               FontSize="24" 
+               Canvas.Left="412" 
+               Canvas.Top="36"
+               Foreground="White"></Label>
+        <Rectangle x:Name="PUP1"
+                   Width="25"
+                   Height="25"
+                   Fill="Black" 
+                   Canvas.Left="210" 
+                   Canvas.Top="288"></Rectangle>
+
+        <Label x:Name="victory1"
+               Width="412"
+               Height="50" 
+               Canvas.Left="197" 
+               Canvas.Top="126"
+               Content=""
+               Foreground="White"
+               FontSize="25"
+               HorizontalContentAlignment="Center"></Label>
+
+        <Label x:Name="SaveNaam1"
+               Content=""
+               Foreground="Black"></Label>
+
+        <Label x:Name="SaveNaam2"
+               Content=""
+               Foreground="Black"></Label>
+    </Canvas>
 </Window>

@@ -12,6 +12,8 @@
     <None Remove="Images\Nijntje 1200px.jpg" />
     <None Remove="Images\Nijntjebackground.png" />
     <None Remove="Images\NijntjebalGoed.png" />
+    <None Remove="Images\WitteBal.png" />
+    <None Remove="Images\zwart-vlak.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +21,8 @@
     <Resource Include="Images\Nijntje 1200px.jpg" />
     <Resource Include="Images\Nijntjebackground.png" />
     <Resource Include="Images\NijntjebalGoed.png" />
+    <Resource Include="Images\WitteBal.png" />
+    <Resource Include="Images\zwart-vlak.jpg" />
   </ItemGroup>
 
 </Project>
