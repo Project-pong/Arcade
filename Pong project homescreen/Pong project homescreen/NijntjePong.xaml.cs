@@ -15,20 +15,33 @@ using System.Windows.Threading;
 
 namespace Pong_project_homescreen
 {
-  
+
     public partial class NijntjePong : Window
     {
         private ImageBrush PongBal2 = new ImageBrush();
         private bool moveUpPlayer2 = false, moveDownPlayer2 = false;
         private bool moveUpPlayer1 = false, moveDownPlayer1 = false;
-        const int SPEED = 7;
+        const int SPEED = 3;
         private DispatcherTimer gameTimer = new DispatcherTimer();
-        
+
+        private double nijntjeX = 0.0;
+        private double nijntjeY = 0.0;
+        private double nijntjeDirX = -2.25;
+        private double nijntjeDirY = 3.0;
+        int puntenP1 = 1;
+        int puntenP2 = 1;
+
+        int timeCs, timeSec, timeMin;
+        bool staatAan;
+
+        //houdt bij welkle speler als laatste heeft gekaatst
+        int lastPlayerHit = 0;
+
         public NijntjePong(string P1Naam, string P2Naam)
         {
             InitializeComponent();
 
-            gameTimer.Interval = TimeSpan.FromMilliseconds(20);
+            gameTimer.Interval = TimeSpan.FromMilliseconds(5);
             gameTimer.Tick += MovePlayers;
             gameTimer.Tick += MoveNijntje;
             gameTimer.Start();
@@ -37,14 +50,9 @@ namespace Pong_project_homescreen
 
             PongBal2.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/NijntjebalGoed.png"));
             NijntjeRect.Fill = PongBal2;
-            
+
         }
 
-        private double nijntjeY = 0.0;
-        private double nijntjeDirY = 3.0;
-
-        private double nijntjeX = 0.0;
-        private double nijntjeDirX = 0.25;
         private void MoveNijntje(object sender, EventArgs e)
         {
             nijntjeY += nijntjeDirY;
@@ -55,12 +63,104 @@ namespace Pong_project_homescreen
             NijntjeRect.RenderTransform = group;
             if (nijntjeY >= 178.0)
             {
-                nijntjeDirY = nijntjeDirY * - 1.0;
+                nijntjeDirY = nijntjeDirY * -1.0;
             }
             if (nijntjeY <= -196.0)
             {
                 nijntjeDirY = nijntjeDirY * -1.0;
             }
+
+            //bereken de posities van nijntje en de twee spelers
+            Rect positionNijntje = new Rect(Canvas.GetLeft(NijntjeRect) + nijntjeX, Canvas.GetTop(NijntjeRect) + nijntjeY, 40, 40);
+            Rect player1position = new Rect(Canvas.GetLeft(Player1), Canvas.GetTop(Player1), Player1.Width, Player1.Height);
+            Rect player2position = new Rect(Canvas.GetLeft(Player2), Canvas.GetTop(Player2), Player2.Width, Player2.Height);
+
+            //kaats nijntje als speler 1 wordt geraakt
+            if (positionNijntje.IntersectsWith(player1position) && lastPlayerHit != 1)
+            {
+                lastPlayerHit = 1;
+                nijntjeDirX *= -1;
+            }
+            //kaats nijntje als speler 2 wordt geraakt
+            if (positionNijntje.IntersectsWith(player2position) && lastPlayerHit != 2)
+            {
+                lastPlayerHit = 2;
+                nijntjeDirX *= -1;
+            }
+            //doelpunt voor player 1
+            if (nijntjeX >= 360)
+            {
+                nijntjeDirY = nijntjeDirY * -0;
+                nijntjeDirX = nijntjeDirX * -0;
+                nijntjeX = 0;
+                nijntjeY = 0;
+                nijntjeDirX = 2.25;
+                nijntjeDirY = 3.0;
+            }
+            if (nijntjeX >= 357)
+            {
+                scoreP1.Content = puntenP1++;
+            }
+            //doelpunt voor player 2
+            if (nijntjeX <= -380)
+            {
+                nijntjeDirY = nijntjeDirY * -0;
+                nijntjeDirX = nijntjeDirX * -0;            
+                nijntjeX = 0;
+                nijntjeY = 0;
+                nijntjeDirX = -2.25;
+                nijntjeDirY = 3.0;
+            }
+            if (nijntjeX <= -377)
+            {
+                scoreP2.Content = puntenP2++;
+            }
+            //speler 1 heeft gewonnen
+            if (puntenP1 == 11)
+            {
+                nijntjeX = 0;
+                nijntjeY = 0;
+                nijntjeDirY = nijntjeDirY * -0;
+                nijntjeDirX = nijntjeDirX * -0;
+                staatAan = false;
+            }
+            //speler 2 heeft gewonnen
+            if (puntenP2 == 11)
+            {
+                nijntjeX = 0;
+                nijntjeY = 0;
+                nijntjeDirY = nijntjeDirY * -0;
+                nijntjeDirX = nijntjeDirX * -0;
+                staatAan = false;
+            }
+
+            if (nijntjeX != 0.0)
+            {
+                staatAan = true;
+            }
+
+            if (staatAan == true)
+            {
+                timeCs++;
+
+                if (timeCs >= 100)
+                {
+                    timeSec++;
+                    timeCs = 00;
+
+                    if (timeSec >= 60)
+                    {
+                        timeMin++;
+                        timeSec = 00;
+
+                    }
+                }
+            }
+
+            TimerMin.Content = timeMin;
+            TimerSec.Content = timeSec;
+            TimerCs.Content = timeCs;
+
         }
 
 
@@ -69,25 +169,39 @@ namespace Pong_project_homescreen
         {
             if (moveUpPlayer2)
             {
-                Canvas.SetTop(Player2, Canvas.GetTop(Player2) - SPEED);
+                if (Canvas.GetTop(Player2) > 0)
+                {
+                    Canvas.SetTop(Player2, Canvas.GetTop(Player2) - SPEED);
+                }
             }
+
             if (moveUpPlayer1)
             {
-                Canvas.SetTop(Player1, Canvas.GetTop(Player1) - SPEED);
+                if (Canvas.GetTop(Player1) > 0)
+                {
+                    Canvas.SetTop(Player1, Canvas.GetTop(Player1) - SPEED);
+                }
             }
 
             if (moveDownPlayer2)
             {
-                Canvas.SetTop(Player2, Canvas.GetTop(Player2) + SPEED);
+                if (Canvas.GetTop(Player2) < 346)
+                {
+                    Canvas.SetTop(Player2, Canvas.GetTop(Player2) + SPEED);
+                }
             }
 
             if (moveDownPlayer1)
             {
-                Canvas.SetTop(Player1, Canvas.GetTop(Player1) + SPEED);
+
+                if (Canvas.GetTop(Player1) < 346)
+                {
+                    Canvas.SetTop(Player1, Canvas.GetTop(Player1) + SPEED);
+                }
             }
 
         }
-        private void KeyDown(object sender, KeyEventArgs e)
+        private void KeyDown2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Down)
             {
@@ -105,10 +219,9 @@ namespace Pong_project_homescreen
             {
                 moveDownPlayer1 = true;
             }
-            
         }
 
-        private void KeyUp(object sender, KeyEventArgs e)
+        private void KeyUp2(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Up)
             {
@@ -125,13 +238,8 @@ namespace Pong_project_homescreen
             if (e.Key == Key.S)
             {
                 moveDownPlayer1 = false;
-            }            
-            
+            }
+
         }
-
-
-        
-        
-       
     }
 }
