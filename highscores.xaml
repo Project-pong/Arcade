@@ -1,0 +1,44 @@
+﻿<Window x:Class="Pong_project_homescreen.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pong_project_homescreen"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Highscores"
+               FontSize="40"
+               HorizontalAlignment="Center"
+               FontFamily="Goudy stout"
+               Margin="0 , 10, 0, 0"></Label>
+        <StackPanel Grid.Row="2">
+        <Button Grid.Row="2"
+                Width="100"
+                Height="25"
+                Content="Homescreen"
+                FontSize="15"
+                Click="Homescreen_Click"
+                Margin="0, 10, 0, 10">
+        </Button>
+            <Button
+                Width="100"
+                Height="25"
+                Content="Refresh"
+                FontSize="15"
+                Click="Refresh_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1"
+                     x:Name="HighScorePanel">
+            <Label x:Name="high"
+                Content=""></Label>
+
+            
+        </StackPanel>
+    </Grid>
+</Window>

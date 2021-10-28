@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Pong_project_homescreen</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\1200px-Pong.png" />
+    <None Remove="Images\Nijntje 1200px.jpg" />
+    <None Remove="Images\Nijntjebackground.png" />
+    <None Remove="Images\NijntjebalGoed.png" />
+    <None Remove="Images\WitteBal.png" />
+    <None Remove="Images\zwart-vlak.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\1200px-Pong.png" />
+    <Resource Include="Images\Nijntje 1200px.jpg" />
+    <Resource Include="Images\Nijntjebackground.png" />
+    <Resource Include="Images\NijntjebalGoed.png" />
+    <Resource Include="Images\WitteBal.png" />
+    <Resource Include="Images\zwart-vlak.jpg" />
+  </ItemGroup>
+
+</Project>
